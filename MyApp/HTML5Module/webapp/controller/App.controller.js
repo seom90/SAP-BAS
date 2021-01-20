@@ -57,6 +57,9 @@ sap.ui.define([
                 var oSelectItem = oEvent.getParameter("listItem");
                 var oContext = oSelectItem.getBindingContext();
                 var sPath = oContext.getPath();
+                var oPanel = this.byId("productDetailsPanel");
+
+                oPanel.bindElement({path : sPath});
             }
 
 		});
