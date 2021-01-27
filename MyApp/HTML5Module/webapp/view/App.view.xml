@@ -79,16 +79,20 @@
                             text="Data Binding"
                             key="db" >
                             <List 
-                                headerText="{i18n>productListTitle}"
+                                id="invoiceList"
+                                headerText="Product"
                                 width="auto"
                                 items="{
-                                    path: '/ProductSet',
-                                    sorter :{
-                                        path: 'Category',
-                                        group: true
+                                    path : '/ProductSet',
+                                    sorter : {
+                                        path : 'Category',
+                                        group : true
+                                    },
+                                    parameters:{
+                                        expand : 'ToSupplier'
                                     }
+
                                 }"
-                                id="invoiceList"
                                 growing="true"
                                 growingThreshold="5"
                                 growingScrollToLoad="false"
@@ -100,13 +104,11 @@
                                         <Title 
                                             text="{i18n>productListTitle}">
                                         </Title>
-                                        <ToolbarSpacer >
-                                        </ToolbarSpacer>
-                                        <SearchField  
-                                        width="25%"
-                                        liveChange="onFilterProducts"
-                                        search="onFilterProducts">
-                                        </SearchField>
+                                        <ToolbarSpacer ></ToolbarSpacer>
+                                        <SearchField 
+                                            width="50%"
+                                            search="onFilterProducts">
+                                            </SearchField>
                                     </Toolbar>
                                 </headerToolbar>
                                 <items>
@@ -136,25 +138,31 @@
                                                 }" >
                                             </ObjectStatus>
                                         </firstStatus>
+                                        <secondStatus>
+                                            <ObjectStatus 
+                                                title="Delivered from"
+                                                text="{ToSupplier/Address/City}">
+                                            </ObjectStatus>
+                                        </secondStatus>
                                     </ObjectListItem>
                                 </items>
                             </List>
-                            <Panel  
+                            <Panel 
                                 id="productDetailsPanel"
-                                headerText="Product DEtails"
+                                headerText="{i18n>productDetailsPanelHeader}"
                                 visible="false">
-                                <layout:Grid >
+                                <layout:Grid defaultSpan="L3 M6 S12">
                                     <Text 
-                                        text="Product ID : {ProductID}">
+                                        text="{i18n>productDetailPanelID} : {ProductID}">
                                     </Text>
                                     <Text 
-                                        text="Product Name : {Name}">
+                                        text="{i18n>productDetailPanelName} : {Name}">
                                     </Text>
                                     <Text 
-                                        text="Description : {Description}">
+                                        text="{i18n>productDetailPanelDescription} : {Description}">
                                     </Text>
                                     <Text 
-                                        text="Price : {Price}">
+                                        text="{i18n>productDetailPanelPrice} : {Price}">
                                     </Text>
                                 </layout:Grid>
                             </Panel>
@@ -170,18 +178,9 @@
         press="onShowhello"/>
 	<Input 
         xmlns="sap.m" 
-        value="{
-            path:'helloPanel>/recipient/name',
-            type: 'sap.ui.model.type.Float',
-            formatOptions: {
-                minFractionDigits : 2
-            },
-            constraints: {
-                maximum : 3000
-            }
-            }" 
+        value="{helloPanel>/recipient/name}" 
         description="Hello {helloPanel>/recipient/name}" 
-        
+        valueLiveUpdate="true"
         width="60%"
         id="input2"/>
 </mvc:View>

@@ -10,7 +10,7 @@ sap.ui.define([
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      * @param {typeof sap.m.MessageToast} MessageToast
      **/
-	function (Controller, MessageToast,formatter, Filter, FilterOperator) {
+	function (Controller, MessageToast,formatter,Filter,FilterOperator) {
 		"use strict";
 
 		return Controller.extend("opensap.HTML5Module.controller.App", {
@@ -35,31 +35,33 @@ sap.ui.define([
                 MessageToast.show(sMsg);
             },
 
-            onFilterProducts: function (oEvent){
-                //build filter array
-                var aFilter = [],
-                    sQuery = oEvent.getParameter("query"),
-                    //retrive list control
-                    oList = this.getView().byId("invoiceList"),
-                    //get biding for aggregation 'items'
-                    oBiding = oList.getBinding("items") ;
+            onItemSelected: function (oEvent){
 
-                if (sQuery == null ) {
-                    sQuery = oEvent.getParameter("newValue");
-                }
-                if (sQuery) {
-                    aFilter.push(new Filter("ProductID", FilterOperator.Contains, sQuery));
-                }
-                oBiding.filter(aFilter);
-            },
-
-            onItemSelected: function(oEvent){
-                var oSelectItem = oEvent.getParameter("listItem");
-                var oContext = oSelectItem.getBindingContext();
+                var oSelectedItem = oEvent.getParameter("listItem");
+                var oContext = oSelectedItem.getBindingContext();
                 var sPath = oContext.getPath();
                 var oPanel = this.byId("productDetailsPanel");
 
-                oPanel.bindElement({path : sPath});
+                oPanel.bindElement({path: sPath});
+                oPanel.setVisible(true);
+
+            },
+
+            onFilterProducts: function (oEvent){
+
+                var aFilter = [],
+                    sQuery = oEvent.getParameter("query"),
+
+                    oList = this.getView().byId("invoiceList"),
+
+                    oBinding = oList.getBinding("items");
+
+                
+                if(sQuery){
+                    aFilter.push(new Filter("ProductID", FilterOperator.Contains, sQuery));
+                }
+
+                oBinding.filter(aFilter);
             }
 
 		});
