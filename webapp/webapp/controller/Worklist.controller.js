@@ -80,7 +80,8 @@ sap.ui.define([
 				oTable = oEvent.getSource(),
 				iTotalItems = oEvent.getParameter("total"),
 				oModel = this.getModel(),
-				oViewModel = this.getModel("worklistView");
+                oViewModel = this.getModel("worklistView");
+                oModel.setUseBatch(false);
 			// only update the counter if the length is final and
 			// the table is not empty
 			if (iTotalItems && oTable.getBinding("items").isLengthFinal()) {
@@ -158,7 +159,11 @@ sap.ui.define([
 			var oOpener = oEvent.getParameter("domRef");
 			
 			oPopover.openBy(oOpener);
-		},
+        },
+        
+        onAdd: function(oEvent){
+            this.getRouter().navTo("add");
+        },
 		
 		_getPopover: function(){
 			if(!this._oPopover){

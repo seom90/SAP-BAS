@@ -62,6 +62,7 @@
 									priority="NeverOverflow"/>
 							</layoutData>
 						</SearchField>
+                        <Button id="addButton" icon="sap-icon://add" press="onAdd"/>
 					</OverflowToolbar>
 				</headerToolbar>
 
@@ -86,7 +87,7 @@
 						press=".onPress">
 						<cells>
 							<ObjectIdentifier
-								title="{ProductID}" titleActive="true" titlePress="onShowDetailPopover"/>
+								title="{ProductID}" titleActive="true" text="{SupplierID}" titlePress="onShowDetailPopover"/>
                             <Text text="{SupplierName}"></Text>
                             <Link text="{ToSupplier/WebAddress}" href="{ToSupplier/WebAddress}" target="_blank"></Link>
 							<ObjectNumber
