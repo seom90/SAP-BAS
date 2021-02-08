@@ -27,6 +27,7 @@
 				viewName ="opensap.webapp.view.ProductDetails" >
 				
 			</mvc:XMLView>
+
 			<core:Fragment 
 				fragmentName="opensap.webapp.view.Supplierinfo" 
 				type="XML">

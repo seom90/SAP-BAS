@@ -69,7 +69,12 @@ sap.ui.define([
 			var oOpener = oEvent.getParameter("domRef");
 			
 			oPopover.openBy(oOpener);
-		},
+        },
+        
+        onSubmit: function(oEvent){
+            var iValue = oEvent.getParameter("value");
+            sap.m.MessageToast.show("your new rating is "+ iValue );
+        },
 		
 		_getPopover: function(){
 			if(!this._oPopover){

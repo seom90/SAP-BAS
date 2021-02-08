@@ -84,8 +84,10 @@ sap.ui.define([
                 oModel.setUseBatch(false);
 			// only update the counter if the length is final and
 			// the table is not empty
+			// @ts-ignore
 			if (iTotalItems && oTable.getBinding("items").isLengthFinal()) {
                 sTitle = this.getResourceBundle().getText("worklistTableTitleCount", [iTotalItems]);
+                // @ts-ignore
                 jQuery.each(this._nFilter, function (sKey,oFilter){
 					oModel.read("/ProductSet/$count",{
 						filters: oFilter,

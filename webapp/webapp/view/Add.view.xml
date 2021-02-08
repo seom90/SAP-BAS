@@ -45,7 +45,11 @@
                     <smartform:GroupElement >
                         <smartfield:SmartField 
                             id="CategoryField"
-                            value="{Category}">
+                            value="{Category}"
+                            placeholder="Enter category"
+                            showValueHelp="true"
+                            contextEditable="false"
+                            press="onCateogryPress">
                         </smartfield:SmartField>
                     </smartform:GroupElement>
                     <smartform:GroupElement >
