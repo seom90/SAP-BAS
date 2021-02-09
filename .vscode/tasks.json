@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build UX402_U2",
+      "type": "shell",
+      "command": "if [ ! -f ${workspaceFolder}/UX402_U2/ux402-u2-approuter/node_modules/@sap/html5-repo-mock/index.js ] || [ ! -f ${workspaceFolder}/UX402_U2/ux402-u2-approuter/node_modules/@sap/approuter/approuter.js ]; then npm i @sap/approuter && npm i @sap/html5-repo-mock; fi",
+      "options": {
+        "cwd": "${workspaceFolder}/UX402_U2/ux402-u2-approuter"
+      }
+    },
+    {
+      "label": "Build Master-Detail",
+      "type": "shell",
+      "command": "if [ ! -f ${workspaceFolder}/Master-Detail/master-detail-approuter/node_modules/@sap/html5-repo-mock/index.js ] || [ ! -f ${workspaceFolder}/Master-Detail/master-detail-approuter/node_modules/@sap/approuter/approuter.js ]; then npm i @sap/approuter && npm i @sap/html5-repo-mock; fi",
+      "options": {
+        "cwd": "${workspaceFolder}/Master-Detail/master-detail-approuter"
+      }
+    },
+    {
+      "label": "Build manageproducts",
+      "type": "shell",
+      "command": "if [ ! -f ${workspaceFolder}/manageproducts/manageproducts-approuter/node_modules/@sap/html5-repo-mock/index.js ] || [ ! -f ${workspaceFolder}/manageproducts/manageproducts-approuter/node_modules/@sap/approuter/approuter.js ]; then npm i @sap/approuter && npm i @sap/html5-repo-mock; fi",
+      "options": {
+        "cwd": "${workspaceFolder}/manageproducts/manageproducts-approuter"
+      }
+    }
+  ]
+}

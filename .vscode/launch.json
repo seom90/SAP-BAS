@@ -1,0 +1,65 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run UX402_U2-UX402_U2",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/UX402_U2/ux402-u2-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/ux402UX402_U2/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/UX402_U2/UX402_U2",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/UX402_U2/UX402_U2\"}"
+      },
+      "envFile": "${workspaceFolder}/UX402_U2/UX402_U2/.env1",
+      "preLaunchTask": "Build UX402_U2"
+    },
+    {
+      "name": "Run manageproducts-webapp",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/manageproducts/manageproducts-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/opensapwebapp/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/manageproducts/webapp",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/manageproducts/webapp\"}"
+      },
+      "envFile": "${workspaceFolder}/manageproducts/webapp/.env5",
+      "preLaunchTask": "Build manageproducts"
+    },
+    {
+      "name": "Run Master-Detail-master_detail",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/Master-Detail/master-detail-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/ux402master_detail/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/Master-Detail/master_detail",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Master-Detail/master_detail\"}"
+      },
+      "envFile": "${workspaceFolder}/Master-Detail/master_detail/.env1",
+      "preLaunchTask": "Build Master-Detail"
+    }
+  ]
+}

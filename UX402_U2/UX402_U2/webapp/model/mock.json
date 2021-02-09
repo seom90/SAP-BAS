@@ -1,0 +1,19 @@
+{
+    "SalesOrderCollection":[
+    {
+        "SoID": "300000097",
+        "GrossAmount": "13244.47",
+        "BuyerName": "1113.00",
+        "TaxAmount": "2111.47",
+        "CurrencyCode" : "EUR",
+        "ApprovalStatus": "Pending"
+    },
+    {
+        "SoID": "300000098",
+        "GrossAmount": "14244.47",
+        "BuyerName": "1113.00",
+        "TaxAmount": "2111.47",
+        "CurrencyCode" : "USD",
+        "ApprovalStatus": "Approved"
+    }]
+}

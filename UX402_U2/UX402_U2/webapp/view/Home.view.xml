@@ -1,0 +1,29 @@
+<mvc:View 
+    controllerName="ux402.UX402_U2.controller.Home" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true" 
+    xmlns="sap.m"
+    xmlns:semantic="sap.m.semantic">
+    
+    <semantic:FullscreenPage 
+        title="Sales Order Test" >
+        <semantic:content>
+            <List 
+                id="list"
+                items="{/SalesOrderCollection}"
+                headerText="Sales Order">
+                <ObjectListItem
+                    title="{SoID}"
+                    type="Inactive"
+                    number="{GrossAmount}"
+                    numberUnit="{CurrencyCode}"
+                    icon="{
+                        path: 'ApprovalStatus',
+                        formatter: '.formatter.getIcon'
+                    }" >
+
+                </ObjectListItem>
+            </List>
+        </semantic:content>          
+	</semantic:FullscreenPage>
+</mvc:View>

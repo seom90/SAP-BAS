@@ -1,0 +1,56 @@
+_schema-version: "3.2"
+ID: Master-Detail
+version: 0.0.1
+modules:
+- name: master-detail-approuter
+  type: approuter.nodejs
+  path: master-detail-approuter
+  requires:
+  - name: Master-Detail_html_repo_runtime
+  - name: dest_Master-Detail
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: Master-Detail_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Master-Detail_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - master_detail-content.zip
+      name: master_detail
+      target-path: resources/
+- name: master_detail
+  type: html5
+  path: master_detail
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: Master-Detail_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: Master-Detail_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: dest_Master-Detail
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: destination
+    service-plan: lite
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install
