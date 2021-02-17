@@ -75,7 +75,7 @@
           "defaultBindingMode": "TwoWay",
           "defaultCountMode": "Inline",
           "refreshAfterChange": false,
-          "useBatch" : false
+          "useBatch" : true
         }
       }
     },

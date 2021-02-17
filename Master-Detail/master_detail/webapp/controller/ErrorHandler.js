@@ -14,12 +14,14 @@ sap.ui.define([
 		 * @alias ux402.master_detail.controller.ErrorHandler
 		 */
 		constructor : function (oComponent) {
+			// @ts-ignore
 			this._oResourceBundle = oComponent.getModel("i18n").getResourceBundle();
 			this._oComponent = oComponent;
 			this._oModel = oComponent.getModel();
 			this._bMessageOpen = false;
 			this._sErrorText = this._oResourceBundle.getText("errorText");
 
+			// @ts-ignore
 			this._oModel.attachMetadataFailed(function (oEvent) {
 				var oParams = oEvent.getParameters();
 				this._showServiceError(oParams.response);

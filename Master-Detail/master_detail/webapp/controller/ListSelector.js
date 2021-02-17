@@ -15,11 +15,13 @@
 		 */
 
 		constructor : function () {
+			// @ts-ignore
 			this._oWhenListHasBeenSet = new Promise(function (fnResolveListHasBeenSet) {
 				this._fnResolveListHasBeenSet = fnResolveListHasBeenSet;
 			}.bind(this));
 			// This promise needs to be created in the constructor, since it is allowed to
 			// invoke selectItem functions before calling setBoundMasterList
+			// @ts-ignore
 			this.oWhenListLoadingIsDone = new Promise(function (fnResolve, fnReject) {
 				// Used to wait until the setBound masterList function is invoked
 				this._oWhenListHasBeenSet

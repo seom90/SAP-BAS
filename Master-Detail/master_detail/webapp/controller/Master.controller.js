@@ -100,6 +100,7 @@ sap.ui.define([
 		 * @public
 		 */
 		onSearch : function (oEvent) {
+			// @ts-ignore
 			if (oEvent.getParameters().refreshButtonPressed) {
 				// Search field's 'refresh' button has been pressed.
 				// This is visible if you select any master list item.
@@ -137,6 +138,7 @@ sap.ui.define([
 		onOpenViewSettings : function (oEvent) {
 			var sDialogTab = "filter";
 			if (oEvent.getSource() instanceof sap.m.Button) {
+				// @ts-ignore
 				var sButtonId = oEvent.getSource().getId();
 				if (sButtonId.match("sort")) {
 					sDialogTab = "sort";
@@ -171,6 +173,7 @@ sap.ui.define([
 		 * @public
 		 */
 		onConfirmViewSettingsDialog : function (oEvent) {
+			// @ts-ignore
 			var aFilterItems = oEvent.getParameters().filterItems,
 				aFilters = [],
 				aCaptions = [];
@@ -209,13 +212,18 @@ sap.ui.define([
 				aSorters = [];
 			// apply sorter to binding
 			// (grouping comes before sorting)
+			// @ts-ignore
 			if (mParams.groupItem) {
+				// @ts-ignore
 				sPath = mParams.groupItem.getKey();
+				// @ts-ignore
 				bDescending = mParams.groupDescending;
 				var vGroup = this._oGroupFunctions[sPath];
 				aSorters.push(new Sorter(sPath, bDescending, vGroup));
 			}
+			// @ts-ignore
 			sPath = mParams.sortItem.getKey();
+			// @ts-ignore
 			bDescending = mParams.sortDescending;
 			aSorters.push(new Sorter(sPath, bDescending));
 			this._oList.getBinding("items").sort(aSorters);
@@ -231,6 +239,7 @@ sap.ui.define([
 				bSelected = oEvent.getParameter("selected");
 
 			// skip navigation when deselecting an item in multi selection mode
+			// @ts-ignore
 			if (!(oList.getMode() === "MultiSelect" && !bSelected)) {
 				// get the list item, either from the listItem parameter or from the event's source itself (will depend on the device-dependent mode).
 				this._showDetail(oEvent.getParameter("listItem") || oEvent.getSource());
@@ -308,11 +317,7 @@ sap.ui.define([
 			}, bReplace);
 		},
 
-		/**
-		 * Sets the item count on the master list header
-		 * @param {integer} iTotalItems the total number of items in the list
-		 * @private
-		 */
+		
 		_updateListItemCount : function (iTotalItems) {
 			var sTitle;
 			// only update the counter if the length is final
