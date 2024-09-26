@@ -1,0 +1,7 @@
+<mvc:View controllerName="studentseom.com.sap.training.ux402.listdetail.ux402listdetail.controller.List"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page_list" title="{i18n>title}">
+        <content />
+    </Page>
+</mvc:View>
