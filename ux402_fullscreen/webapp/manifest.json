@@ -1,0 +1,156 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "studentseom.com.sap.training.ux402.fullscreen.ux402fullscreen",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.15.0",
+      "toolsId": "2be52563-4fe9-4e7a-8121-343865068b6e"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/here/goes/your/serviceurl/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.128.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "studentseom.com.sap.training.ux402.fullscreen.ux402fullscreen.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "studentseom.com.sap.training.ux402.fullscreen.ux402fullscreen.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false,
+        "transition": "slide",
+        "bypassed": {
+          "target":[
+            "notfound"
+          ]
+        }
+      },
+      "routes": [
+        {
+          "name": "overview",
+          "pattern": "",
+          "titleTarget": "",
+          "greedy": false,
+          "target": [
+            "overview"
+          ]
+        },
+        {
+          "name": "flights",
+          "pattern": "carriers/{carrid}",
+          "titleTarget": "",
+          "greedy": false,
+          "target":[
+            "flights"
+          ]
+        },
+        {
+          "name": "notfound",
+          "pattern": "",
+          "titleTarget": "",
+          "greedy": false,
+          "target":[
+            "overview",
+            "flights"
+          ]
+        }
+      ],
+      "targets": {
+        "overview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Carrier",
+          "viewName": "Carrier",
+          "viewLevel": 1
+        },
+        "flights": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Flights",
+          "viewName": "Flights",
+          "viewLevel": 2
+        },
+        "notfound":{
+          "viewName": "NotFound",
+          "viewId": "NotFound",
+          "transition":"show"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "studentseom.com.sap.training.ux402.fullscreen.ux402fullscreen.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

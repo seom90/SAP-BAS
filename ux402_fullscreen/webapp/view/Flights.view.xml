@@ -1,0 +1,49 @@
+<mvc:View controllerName="studentseom.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.Flights"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+    <Page id="flightsPage" title="{Carrname}" showNavButton= "true" navButtonPress="onNavBack">
+        <content>
+            <l:VerticalLayout id="verticalLayout">
+                <ObjectHeader id="objectHeader" title="{Carrname}" number="" numberUnit="{Currcode}" titleHref="{Url}">
+                    <attributes>
+                        <ObjectAttribute id="objectAttribute1" text="{Carrid}" />
+                        <ObjectAttribute id="objectAttribute2" text="{Url}"/>
+                    </attributes>
+                </ObjectHeader>
+            </l:VerticalLayout>
+            <Table items="{path: 'to_Flight', sorter: {path: 'Carrid'}}"            
+                id="idFlights"  mode="SingleSelectMaster"  growing="true"  growingThreshold="10">
+                <headerToolbar>
+                    <Toolbar id="toolbar1">
+                        <Title id="title1" text="Flights" level="H2" />
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="Fcolumn1">
+                        <Text id="text1" text="{i18n>carriername}" />
+                    </Column>
+                    <Column id="Fcolumn2">
+                        <Text id="Ftext2" text="{i18n>flightdate}" />
+                    </Column>
+                    <Column id="Fcolumn3">
+                        <Text id="Ftext3" text="{i18n>seatmax}" />
+                    </Column>
+                    <Column id="Fcolumn4">
+                        <Text id="Ftext4" text="{i18n>seatocc}" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="FcolumnListItem1">
+                        <cells>
+                            <ObjectIdentifier id="FobjectIdentifier1" title="{Carrid}" text="{Carrid}" />
+                            <Text id="text5" text="{path: 'Fldate', type: 'sap.ui.model.type.Date'}" />
+                            <Text id="text6" text="{Seatsmax}" />
+                            <Text id="text7" text="{Seatsocc}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

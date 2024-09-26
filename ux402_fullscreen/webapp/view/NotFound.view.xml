@@ -1,0 +1,15 @@
+<mvc:View
+    controllerName="studentseom.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}"    >
+        <IllustratedMessage id="ilu">
+            <additionalContent>
+                <Button text="Back" press="onNavBack"/>
+            </additionalContent>
+        </IllustratedMessage>
+    </Page>
+</mvc:View>
