@@ -82,26 +82,68 @@
         "viewType": "XML",
         "async": true,
         "viewPath": "studentseom.com.sap.training.ux402.listdetail.ux402listdetail.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false
+        "controlAggregation": "beginColumnPages",
+        "controlId": "layout",
+        "bypassed": {
+          "target":[
+            "masterlist",
+            "notFound"
+          ]
+        }
       },
       "routes": [
         {
-          "name": "RouteList",
-          "pattern": ":?query:",
+          "name": "masterlist",
+          "pattern": "",
+          "titleTarget": "",
+          "greedy": false,
           "target": [
-            "TargetList"
+            "masterlist"
           ]
-        }
+        },        
+        {
+          "name": "carrierdetails",
+          "pattern": "Carriers/{objectId}",
+          "titleTarget": "",
+          "greedy": false,
+          "target": [
+            "masterlist",
+            "carrierdetails"
+          ]
+        }               
       ],
       "targets": {
-        "TargetList": {
+        "masterlist": {
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "List",
-          "viewName": "List"
+          "controlAggregation": "beginColumnPages",
+          "viewId": "list",
+          "viewName": "List",
+          "viewLevel": 1
+        },
+        "carrierdetails":{
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "midColumnPages",
+          "viewId": "carrierdetails",
+          "viewName": "Detail",
+          "viewLevel": 2
+        },
+        "notFound": {
+          "viewType": "XML",
+          "transition":"slide",
+          "controlAggregation": "midColumnPages",
+          "clearControlAggregation": true,
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        },
+        "detailObjectNotFound": {
+          "viewType": "XML",
+          "transition":"slide",
+          "controlAggregation": "midColumnPages",
+          "clearControlAggregation": true,
+          "viewName": "DetailObjectNotFound",
+          "viewId": "detailObjectNotFound"
         }
       }
     },

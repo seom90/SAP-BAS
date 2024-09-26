@@ -1,7 +1,7 @@
 <mvc:View controllerName="studentseom.com.sap.training.ux402.listdetail.ux402listdetail.controller.NotFound"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
-    <Page id="page_not_found" title="{i18n>title}">
-        <content />
-    </Page>
+        <MessagePage id="notFoundMessagePage" title="{i18n>notFoundTitle}" text="{i18n>notFoundText}"
+            icon="sap-icon://document">
+        </MessagePage>
 </mvc:View>

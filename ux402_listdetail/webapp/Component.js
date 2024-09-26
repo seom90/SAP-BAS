@@ -5,9 +5,10 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "studentseom/com/sap/training/ux402/listdetail/ux402listdetail/model/models"
+        "studentseom/com/sap/training/ux402/listdetail/ux402listdetail/model/models",
+        "studentseom/com/sap/training/ux402/listdetail/ux402listdetail/controller/ListSelector"
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models,ListSelector) {
         "use strict";
 
         return UIComponent.extend("studentseom.com.sap.training.ux402.listdetail.ux402listdetail.Component", {
@@ -23,6 +24,9 @@ sap.ui.define([
             init: function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
+
+                // instantiation of the listselector
+                this.oListSelector = new ListSelector();
 
                 // enable routing
                 this.getRouter().initialize();
