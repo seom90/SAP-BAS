@@ -1,0 +1,16 @@
+{
+  "generator-ui5-library": {
+    "libraryname": "controls",
+    "namespace": "studentseom.com.sap.training.ux402",
+    "framework": "SAPUI5",
+    "frameworkVersion": "1.86.3",
+    "author": "Khalid MORENO",
+    "newdir": true,
+    "namespaceURI": "studentseom/com/sap/training/ux402",
+    "librarynamespace": "studentseom.com.sap.training.ux402.controls",
+    "librarynamespaceURI": "studentseom/com/sap/training/ux402/controls",
+    "librarybasepath": "../../../../../../",
+    "frameworklowercase": "sapui5",
+    "setupCompleted": true
+  }
+}

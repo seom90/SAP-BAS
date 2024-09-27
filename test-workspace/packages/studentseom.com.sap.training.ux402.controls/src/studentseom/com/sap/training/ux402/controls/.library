@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+	<name>studentseom.com.sap.training.ux402.controls</name>
+	<vendor>Khalid MORENO</vendor>
+	<version>${version}</version>
+	<copyright>${copyright}</copyright>
+	<title>controls</title>
+	<documentation>Some description about controls</documentation>
+	<dependencies>
+		<dependency>
+			<libraryName>sap.ui.core</libraryName>
+		</dependency>
+	</dependencies>
+</library>

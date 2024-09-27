@@ -1,0 +1,33 @@
+{
+  "name": "studentseom.com.sap.training.ux402.controls",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "karma": "^6.1.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cli": "^2.0.0",
+    "karma-ui5": "^2.3.3",
+    "ui5-middleware-livereload": "^0.5.1",
+    "@ui5/cli": "^3.0.0",
+    "@sap/ux-ui5-tooling": "1"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-livereload"
+    ]
+  },
+  "scripts": {
+    "start": "ui5 serve --open test-resources/studentseom/com/sap/training/ux402/controls/Example.html",
+    "testsuite": "ui5 serve --open test-resources/studentseom/com/sap/training/ux402/controls/qunit/testsuite.qunit.html",
+    "test": "karma start --browsers=ChromeHeadless --singleRun=true",
+    "build_old": "ui5 build --clean-dest",
+    "build": "ui5 build -a --clean-dest --include-task=generateCachebusterInfo",
+    "deploy-config": "fiori add deploy-config"
+  },
+  "license": "UNLICENSED",
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ]
+}
