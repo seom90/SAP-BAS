@@ -36,6 +36,10 @@
                     <Column id="Fcolumn5" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
                         <Text id="text8" text="{i18n>bookaction}"/>
                     </Column>
+                    <Column id="Fcolumn6" minScreenWidth="Tablet" demandPopin="true" hAlign="Center">
+                        <Text id="text9" text="{i18n>planeInfo}"/>
+
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem id="FcolumnListItem1">
@@ -43,10 +47,11 @@
                             <ObjectIdentifier id="FobjectIdentifier1" title="{Carrid}" text="{Carrid}" />
                             <Text id="text5" text="{path: 'Fldate', type: 'sap.ui.model.type.Date'}" />
                             <Text id="text6" text="{Seatsmax}" />
-                            <Text id="text7" text="{Seatsocc}" />
+                            <Text id="text7" text="{Seatsocc}" />                            
                             <cust:HoverButton id="hoverButton1" text="{i18n>bookaction}"
                             allowHover="true" hoverText="{=${Seatsmax} - ${Seatsocc}}"
-                            hover="onHover"/>
+                            hover="onHover"/>                            
+                            <cust:PlaneInfo id="planeInfo1" seatsMax="{Seatsmax}" seatsOcc="{Seatsocc}" />
                         </cells>
                     </ColumnListItem>
                 </items>
